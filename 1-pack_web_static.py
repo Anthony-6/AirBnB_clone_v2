@@ -7,7 +7,7 @@ from datetime import datetime
 
 def do_pack():
     '''compress the file '''
-    local('mkdir -p versions')
+    local('mkdir -p versions/')
     compress_file = local('tar -cvzf versions/web_static_{}.tgz web_static'
                           .format(datetime.
                                   strftime(datetime.now(), "%Y%m%d%H%M%S")))
