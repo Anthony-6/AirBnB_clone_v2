@@ -29,34 +29,34 @@ def do_deploy(archive_path):
     filename_no_extention = file_path[1].split('.tgz')
     filename = file_path[1]
     exc = put('versions/{}'.format(filename), 'tmp/{}'.format(filename))
-    if exc.failed is True:
+    if exc.failed:
         return False
     exc = run('mkdir -p /data/web/static/releases/{}/'
               .format(filename_no_extention))
-    if exc.failed is True:
+    if exc.failed:
         return False
     exc = run('tar -xzf /tmp/{} -C /data/web/static/releases/{}/'
               .format(filename, filename_no_extention))
-    if exc.failed is True:
+    if exc.failed:
         return False
     exc = run('rm /tmp/{}'.format(filename))
-    if exc.faild is True:
+    if exc.failed:
         return False
     exc = run('mv /data/web_static/releases/{}'
               '/web_static/* /data/web_static/releases/{}/'
               .format(filename_no_extention, filename_no_extention))
-    if exc.failed is True:
+    if exc.failed:
         return False
     exc = run('rm -rf /data/web_static/releases/{}/web_static'
               .format(filename_no_extention))
-    if exc.failed is True:
+    if exc.failed:
         return False
     exc = run('rm -rf /data/web_static/current')
-    if exc.failed is True:
+    if exc.failed:
         return False
     exc = run('ln -s /data/web_static/releases/{}/ /data/web_static/current'
               .format(filename_no_extention))
-    if exc.failed is True:
+    if exc.failed:
         return False
     print('New version deployed!')
     return True
