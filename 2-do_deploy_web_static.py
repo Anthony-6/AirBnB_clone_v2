@@ -19,11 +19,12 @@ def do_pack():
     else:
         return compress_file
 
+
 def do_deploy(archive_path):
     ''' distribute archive to my webserver '''
     if not os.path.exists(archive_path):
         return False
-    
+
     file_path = archive_path.split('/')
     filename_no_extention = file_path[1].split('.tgz')
     filename = file_path[1]
