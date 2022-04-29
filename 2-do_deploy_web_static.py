@@ -28,7 +28,7 @@ def do_deploy(archive_path):
     file_path = archive_path.split('/')
     filename_no_extention = file_path[1].split('.tgz')
     filename = file_path[1]
-    exc = put(archive_path, 'tmp/{}'.format(filename))
+    exc = put('versions/{}'.format(filename), 'tmp/{}'.format(filename))
     if exc.failed is True:
         return False
     exc = run('mkdir -p /data/web/static/releases/{}/'
