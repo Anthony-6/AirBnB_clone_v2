@@ -7,5 +7,6 @@ mkdir -p /data/web_static/shared/
 echo "Holberton School" > /data/web_static/releases/test/index.html
 ln -sf /data/web_static/releases/test /data/web_static/current
 chown -R ubuntu:ubuntu /data
-sed -i '\t location /hbnb_static { alias /data/web_static/current/; }' /etc/nginx/sites-available/default
+sudo sed -i '\t location /hbnb_static { alias /data/web_static/current/; }' /etc/nginx/sites-available/default
 service nginx restart
+exit 0
