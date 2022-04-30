@@ -60,6 +60,7 @@ def do_deploy(archive_path):
     print('New version deployed!')
     return True
 
+
 def deploy():
     '''script that reates and distributes an archive to a web server'''
     file = do_pack()
