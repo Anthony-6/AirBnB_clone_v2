@@ -50,7 +50,8 @@ def sixth(n):
 
 @app.route('/number_odd_or_even/<int:n>', strict_slashes=False)
 def seventh(n):
-    ''' display HTML page and create balise h1 using N as parameter '''
+    ''' display HTML page and create balise h1 using N as parameter
+        and check if it's odd or even in the html file '''
     if isinstance(n, int) is True:
         return render_template('6-number_odd_or_even.html', n=n)
 
