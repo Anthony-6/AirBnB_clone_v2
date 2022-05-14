@@ -45,8 +45,7 @@ def fifth(n):
 def sixth(n):
     ''' display HTML page and create balise h1 using N as parameter '''
     if isinstance(n, int) is True:
-        text = f'Number: {n}'
-        return render_template('5-number.html', text=text)
+        return render_template('5-number.html', n=n)
 
 
 if __name__ == '__main__':
