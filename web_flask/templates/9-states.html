@@ -10,7 +10,7 @@
                 {% for s in state|sort(attribute='name')%}
                 <li>{{s.id|e}}: <B>{{s.name|e}}</B></li>
                 {% endfor %}
-                </UL>
+            </UL>
             {% elif states is none %}
                 <H1>Not Found!</H1>
                 {% else %}
@@ -22,6 +22,5 @@
                         {% endfor %}
                     </UL>
             {% endif %}
-        </UL>
     </BODY>
 </HTML>
