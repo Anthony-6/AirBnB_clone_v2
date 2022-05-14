@@ -62,6 +62,5 @@ class FileStorage:
         except FileNotFoundError:
             pass
 
-'''    def close(self):
-        return self.reload()
-'''
+    def close(self):
+        self.reload()
