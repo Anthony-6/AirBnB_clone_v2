@@ -4,20 +4,21 @@
         <TITLE>HBNB</TITLE>
     </HEAD>
     <BODY>
+        {% if id is none %}
         <H1>States</H1>
         <UL>
-            {% if id is none %}
                 {% for s in state|sort(attribute='name')%}
-                <li>State: {{s.id|e}}: <B>{{s.name|e}}</B></li>
+                <li>{{s.id|e}}: <B>{{s.name|e}}</B></li>
                 {% endfor %}
+                </UL>
             {% elif states is none %}
                 <H1>Not Found!</H1>
                 {% else %}
                 <h1>State: {{s.name}}</h1>
-                        <H1>Cities</H1>
+                        <H1>Cities:</H1>
                         <UL>
                         {% for c in s.cities|sort(attribute='name')%}
-                        <li>City: {{c.id|e}}: <B>{{c.name|e}}</B></li>
+                        <li>{{c.id|e}}: <B>{{c.name|e}}</B></li>
                         {% endfor %}
                     </UL>
             {% endif %}
