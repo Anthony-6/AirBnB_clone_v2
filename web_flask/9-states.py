@@ -18,9 +18,9 @@ def statewithoutthecity():
 @app.route('/states/<id>', strict_slashes=False)
 def stateandthecity(id=None):
     ''' return the states and the city'''
-    states = storage.all(State)
+    states = storage.all('State')
     if id:
-        key = '{}.{}'.format(State, id)
+        key = '{}.{}'.format('State', id)
         if key in states:
             states = states[key]
         else:
