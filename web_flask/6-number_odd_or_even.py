@@ -37,8 +37,7 @@ def fourth(text):
 def fifth(n):
     ''' check if N is a integer and return N '''
     if isinstance(n, int) is True:
-        newN = str(n)
-        return '%s is a number' % newN
+        return '%d is a number' % n
 
 
 @app.route('/number_template/<int:n>', strict_slashes=False)
