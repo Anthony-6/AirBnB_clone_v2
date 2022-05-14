@@ -56,10 +56,10 @@ def seventh(n):
     if isinstance(n, int) is True:
         newN = str(n)
         if n % 2 == 0:
-            text = f'Number: {n} is even'
+            text = f'{n} is even'
             return render_template('5-number.html', text=text)
         else:
-            text = f'Number: {n} is odd'
+            text = f'{n} is odd'
             return render_template('6-number_odd_or_even.html', text=text)
 
 
