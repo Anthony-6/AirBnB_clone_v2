@@ -54,13 +54,7 @@ def sixth(n):
 def seventh(n):
     ''' display HTML page and create balise h1 using N as parameter '''
     if isinstance(n, int) is True:
-        newN = str(n)
-        if n % 2 == 0:
-            text = f'{n} is even'
-            return render_template('5-number.html', text=text)
-        else:
-            text = f'{n} is odd'
-            return render_template('6-number_odd_or_even.html', text=text)
+        return render_template('6-number_odd_or_even.html', n=n)
 
 
 if __name__ == '__main__':
