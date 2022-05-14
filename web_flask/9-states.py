@@ -10,10 +10,10 @@ app = Flask(__name__)
 
 @app.route('/states', strict_slashes=False)
 @app.route('/states/<id>', strict_slashes=False)
-def stateandthecity(id):
+def stateandthecity(id=None):
     ''' return the states and the city'''
     states = storage.all(State)
-    if id:
+    if id is not None:
         key = '{}.{}'.format(State, id)
         if key in states:
             states = states[key]
