@@ -11,15 +11,16 @@ app = Flask(__name__)
 @app.route('/states', strict_slashes=False)
 def statewithoutthecity():
     '''return state and city of state'''
-    return render_template('8-cities_by_states.html',
+    return render_template('7-states_list.html',
                            state=storage.all(State).values())
 
 
 @app.route('/states/<id>', strict_slashes=False)
-def stateandthecity(id=None):
+def stateandthecity(id):
     ''' return the states and the city'''
-    stateList = [k for k, v in storage.all(State) if v.id == id]
-    return render_template('9-states.html', stateList=stateList)
+    dic = storage.all(State)
+    states = [dic[k] for k, v in dic.items() if v.id == id]
+    return render_template('9-states.html', states=states)
 
 
 @app.teardown_appcontext
