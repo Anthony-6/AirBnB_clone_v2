@@ -37,7 +37,8 @@ def fourth(text):
 def fifth(n):
     ''' check if N is a integer and return N '''
     if isinstance(n, int) is True:
-        return '%d is a number' % n
+        newN = str(n)
+        return '%s is a number' % newN
 
 
 @app.route('/number_template/<int:n>', strict_slashes=False)
@@ -51,8 +52,7 @@ def sixth(n):
 def seventh(n):
     ''' display HTML page and create balise h1 using N as parameter
         and check if it's odd or even in the html file '''
-    if isinstance(n, int) is True:
-        return render_template('6-number_odd_or_even.html', n=n)
+    return render_template('6-number_odd_or_even.html', n=n)
 
 
 if __name__ == '__main__':
