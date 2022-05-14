@@ -13,7 +13,7 @@ app = Flask(__name__)
 def stateandthecity(id=None):
     ''' return the states and the city'''
     states = storage.all(State)
-    if id != None:
+    if id:
         key = '{}.{}'.format(State, id)
         if key in states:
             states = states[key]
