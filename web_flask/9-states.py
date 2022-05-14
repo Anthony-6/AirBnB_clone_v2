@@ -9,6 +9,12 @@ app = Flask(__name__)
 
 
 @app.route('/states', strict_slashes=False)
+def statewithoutthecity():
+    '''return state and city of state'''
+    return render_template('8-cities_by_states.html',
+                           state=storage.all(State).values())
+
+
 @app.route('/states/<id>', strict_slashes=False)
 def stateandthecity(id=None):
     ''' return the states and the city'''
