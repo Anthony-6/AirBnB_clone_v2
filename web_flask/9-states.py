@@ -18,16 +18,8 @@ def statewithoutthecity():
 @app.route('/states/<id>', strict_slashes=False)
 def stateandthecity(id=None):
     ''' return the states and the city'''
-    states = storage.all('State')
-    if id:
-        key = '{}.{}'.format('State', id)
-        if key in states:
-            states = states[key]
-        else:
-            states = None
-    else:
-        states = storage.all(State).values()
-    return render_template('9-states.html', states=states, id=id)
+    stateList = [k for k, v in storage.all(State) if v.id == id]
+    return render_template('9-states.html', stateList=stateList)
 
 
 @app.teardown_appcontext
