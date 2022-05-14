@@ -14,7 +14,7 @@ def stateandthecity(id):
     ''' return the states and the city'''
     states = storage.all(State)
     if id:
-        key = f'{State}.{id}'
+        key = '{}.{}'.format(State, id)
         if key in states:
             states = states[key]
         else:
