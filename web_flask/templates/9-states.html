@@ -5,7 +5,7 @@
     </HEAD>
     <BODY>
         {% if states != [] %}
-        <H1>States: states[0].name</H1>
+        <H1>States: {{ states[0].name }}</H1>
         <h3>Cities:</h3>
         <UL>
                 {% for s in states[0].cities|sort(attribute='name')%}
