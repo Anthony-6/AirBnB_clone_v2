@@ -45,9 +45,8 @@ def fifth(n):
 def sixth(n):
     ''' display HTML page and create balise h1 using N as parameter '''
     if isinstance(n, int) is True:
-        newN = str(n)
-        text = f'Number: {n}'
-        return render_template('5-number.html', text=text)
+        return render_template('5-number.html', n=n)
+
 
 
 @app.route('/number_odd_or_even/<int:n>', strict_slashes=False)
