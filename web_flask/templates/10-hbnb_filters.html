@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link href="../static/styles/3-footer.css" rel="stylesheet" >
+        <link href="../static/styles/3-header.css" rel="stylesheet">
+        <link href="../static/styles/4-common.css" rel="stylesheet">
+        <link href="../static/styles/6-filters.css" rel="stylesheet">
+        <link rel="shortcut icon" href="../static/images/icon.png">
+    </head>
+    <body>
+        <header>
+        </header>
+        <div class="container">
+            <section class="filters">
+                <div class="locations">
+                    <h3>States</h3>
+                    <h4>&nbsp</h4>
+                    <ul class="popover">
+                        {% for s in states %}
+                        <li class="state"><b>{{ s.name|e }}</b>
+                            <ul>
+                                {% for c in s.cities|sort(attribute="name") %}
+                                <li class="city">{{ c.name|e }}</li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+                        {% endfor %}
+                </div>
+                <div class="amenities">
+                    <h3>Amenities</h3>
+                    <h4>&nbsp</h4>
+                    <ul class="popover">
+                        {% for a in amenities %}
+                        <li>{{ a.name|e }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <button>Search</button>
+            </section>
+        </div>
+        <footer>
+            <p>Best School</p>
+        </footer>
+    </body>
+</html>
